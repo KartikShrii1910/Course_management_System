@@ -1,0 +1,140 @@
+<div class="registration-container">
+    <h1>Registration</h1>
+
+    <form class="example-form" [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+        <mat-form-field class="example-full-width">
+            <mat-label>Full Name</mat-label>
+            <input matInput placeholder="Full Name" formControlName="fullName" [errorStateMatcher]="matcher"
+                pattern="[A-Za-zÀ-ÖØ-öø-ÿ\s\-']*" autocomplete="off">
+            <!-- <mat-hint>Errors appear instantly!</mat-hint> -->
+            <mat-error *ngIf="registrationForm.hasError('fullName') && !registrationForm.hasError('required')">
+                Please enter a valid Name.
+            </mat-error>
+            <mat-error *ngIf="registrationForm.hasError('required')">
+                Name is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+
+       
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Gender:</label>
+                    <div class="radio-buttons">
+                        <mat-radio-group formControlName="gender">
+                            <mat-radio-button value="Male"></mat-radio-button><label>Male</label>
+                            <mat-radio-button value="Female"></mat-radio-button><label>Female</label>
+                        </mat-radio-group>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-6">
+                <mat-form-field class="example-full-width">
+                    <mat-label for="dateOfBirth">Date of Birth</mat-label>
+                    <input matInput formControlName="dateOfBirth" [matDatepicker]="picker" placeholder="Choose a date"
+                        readonly>
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Email" formControlName="email" [errorStateMatcher]="matcher"
+                pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" autocomplete="off">
+            <!-- <mat-hint>Errors appear instantly!</mat-hint> -->
+            <mat-error *ngIf="registrationForm.hasError('email') && !registrationForm.hasError('required')">
+                Please enter a valid email address
+            </mat-error>
+            <mat-error *ngIf="registrationForm.hasError('required')">
+                Email is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Password</mat-label>
+            <input matInput placeholder="Password" formControlName="password" type="password"
+                [errorStateMatcher]="matcher" autocomplete="off"
+                pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,20}$">
+            <!-- <mat-hint>Errors appear instantly!</mat-hint> -->
+            <mat-error *ngIf="registrationForm.hasError('password') && !registrationForm.hasError('required')">
+                Please enter a valid Password address
+            </mat-error>
+            <mat-error *ngIf="registrationForm.hasError('required')">
+                Password is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+
+
+
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Qualification</mat-label>
+            <input matInput placeholder="Qualification" formControlName="qualification" [errorStateMatcher]="matcher"
+                autocomplete="off">
+            <!-- <mat-hint>Errors appear instantly!</mat-hint> -->
+            <mat-error *ngIf="registrationForm.hasError('qualification') && !registrationForm.hasError('required')">
+                Please enter a valid Qualification .
+            </mat-error>
+            <mat-error *ngIf="registrationForm.hasError('required')">
+                Qualification is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Address</mat-label>
+            <input matInput placeholder="Address" formControlName="address" [errorStateMatcher]="matcher"
+                autocomplete="off">
+            <!-- <mat-hint>Errors appear instantly!</mat-hint> -->
+            <mat-error *ngIf="registrationForm.hasError('address') && !registrationForm.hasError('required')">
+                Please enter a valid Address
+            </mat-error>
+            <mat-error *ngIf="registrationForm.hasError('required')">
+                Address is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <!-- 
+        <mat-form-field class="example-full-width">
+            <mat-label>Mobile Number</mat-label>
+            <input matInput placeholder="Mobile Number" formControlName="mobileNumber" [errorStateMatcher]="matcher" pattern="!/^[6-9][0-9]{0,9}$/"
+                autocomplete="off">
+            <mat-error *ngIf="registrationForm.hasError('mobileNumber') && !registrationForm.hasError('required')">
+                Please enter a valid Mobile Number
+            </mat-error>
+            <mat-error *ngIf="registrationForm.hasError('required')">
+                Mobile Number is <strong>required</strong>
+            </mat-error>
+        </mat-form-field> -->
+
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Mobile Number</mat-label>
+            <input matInput placeholder="Mobile Number" formControlName="mobileNumber" [errorStateMatcher]="matcher"
+                autocomplete="off" pattern="^[6-9][0-9]{0,9}$">
+            <!-- <mat-hint>Errors appear instantly!</mat-hint> -->
+            <mat-error *ngIf="registrationForm.hasError('mobileNumber') && !registrationForm.hasError('required')">
+                Please enter a valid Mobile Number
+            </mat-error>
+            <mat-error *ngIf="registrationForm.hasError('required')">
+                Mobile Number is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+
+        <div class="button-container">
+            <button type="submit" [disabled]="registrationForm.invalid">Register</button>
+        </div>
+    </form>
+
+    <p style="padding-top: 10px;">Already have an account? <a routerLink="/signin">Sign In</a></p>
+</div>

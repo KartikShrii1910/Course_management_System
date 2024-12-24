@@ -1,0 +1,70 @@
+.primary-button {
+    background-color: #007bff;
+    /* Set the default background color */
+    color: #fff;
+    /* Set the default text color */
+    border: none;
+    /* padding: 10px 20px; */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    /* Add transition effect for smoother hover */
+}
+
+.primary-button:hover {
+    background-color: #0c0e11;
+    /* Change the background color on hover */
+}
+
+.purchase-button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 8px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.purchase-button:hover {
+    background-color: #45a049;
+}
+
+/* Apply some basic styles to the table */
+.table-container {
+    margin: 20px;
+}
+
+.table {
+
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Style table header */
+.table th {
+    background-color: #f2f2f2;
+    border: 1px solid #dddddd;
+    padding: 8px;
+    text-align: left;
+}
+
+/* Style table rows */
+.table td {
+    border: 1px solid #dddddd;
+    padding: 8px;
+}
+
+/* Apply alternate background color to even rows for better readability */
+.table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Style hover effect on table rows */
+.table tbody tr:hover {
+    background-color: #e2e2e2;
+}

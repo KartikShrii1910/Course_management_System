@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List </title>
+</head>
+<body>
+    
+    <div class="table-container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <!-- <th>ID</th> -->
+                    <th>Full Name</th>
+                    <th>Gender</th>
+                    <th>Date of Birth</th>
+                    <!-- <th>Age</th> -->
+                    <th>Email</th>
+                    <!-- <th>Password</th> -->
+                    <th>Qualification</th>
+                    <th>Role</th>
+                    <th>Address</th>
+                    <th>Mobile Number</th>
+                    <!-- Add more table headers as needed -->
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of student">
+                    <!-- <td>{{ user.id }}</td> -->
+                    <td>{{ user.fullName }}</td>
+                    <td>{{ user.gender }}</td>
+                    <td>{{ user.dateOfBirth }}</td>
+                    <!-- <td>{{ user.age }}</td> -->
+                    <td>{{ user.email }}</td>
+                    <!-- <td>{{ user.password }}</td> -->
+                    <td>{{ user.qualification }}</td>
+                    <td>{{ user.role }}</td>
+                    <td>{{ user.address }}</td>
+                    <td>{{ user.mobileNumber }}</td>
+                  </tr>
+                
+            </tbody>
+        </table>
+        <!-- logout-button.component.html -->
+<!-- <button (click)="logout()">Logout</button> -->
+
+    </div>
+</body>
+</html>

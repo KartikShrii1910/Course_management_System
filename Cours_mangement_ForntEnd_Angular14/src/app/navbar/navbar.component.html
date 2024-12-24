@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <ng-container *ngIf="!islogin">
+          <a class="nav-link active" aria-current="page" routerLink="/signin">Home</a>
+          <a class="nav-link" routerLink="/register">Register</a>
+
+        </ng-container>
+        
+        <!-- Common Links for Logged-in Users -->
+        <ng-container *ngIf="islogin">
+
+          <!-- Admin Links -->
+          
+          <a class="nav-link" *ngIf="isRoleAdmin" routerLink="/addcourse">Add Course</a>
+          <a class="nav-link" *ngIf="isRoleAdmin" routerLink="/listofstudents">Students</a>
+          <a class="nav-link" *ngIf="isRoleAdmin" routerLink="/listofpurchasecourses">Purchased Courses</a>
+
+          <!-- Normal User Links -->
+          <a class="nav-link" *ngIf="isNormalUser||isRoleAdmin" routerLink="/listofcourses">List of Courses</a>
+          <a class="nav-link" *ngIf="isNormalUser||isRoleAdmin" routerLink="/coursespurchasebystudent">My Courses</a>
+        </ng-container>
+
+        <!-- Disabled Link Example -->
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+      </div>
+
+      <!-- Profile Section on the Right -->
+      <div *ngIf="islogin" class="ms-auto d-flex align-items-center">
+        <span class="me-3">{{ user?.fullName }} </span>
+        <button class="btn btn-outline-danger" (click)="logout()">Logout</button>
+      </div>
+
+      <div *ngIf="!islogin" class="ms-auto d-flex align-items-center">
+        <button class="btn btn-outline-success" routerLink="/signin">Log In</button>
+      </div>
+
+    
+    </div>
+  </div>
+</nav>

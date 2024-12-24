@@ -1,0 +1,17 @@
+/* Custom CSS for navbar */
+.navbar {
+    border-bottom: 1px solid #ddd; /* Add a border to the bottom of the navbar */
+  }
+  
+  .navbar-brand {
+    font-weight: bold;
+  }
+  
+  .navbar-nav .nav-link {
+    color: #333;
+  }
+  
+  .navbar-nav .nav-link:hover {
+    color: #555;
+  }
+  

@@ -1,0 +1,32 @@
+<div class="table-container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Course Name</th>
+                <th>Course Description</th>
+                <th>Course Duration</th>
+                <th>Fees(INR)</th>
+                <th>Action</th>
+                <!-- Add more table headers as needed -->
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of course">
+                <td>{{ user.id }}</td>
+                <td>{{ user.courseName }}</td>
+                <td>{{ user.courseDescription }}</td>
+                <td>{{ user.duration }}</td>
+                <td>{{ user.fees }}</td>
+                <td>
+                    <button class="primary-button" (click)="registerForCourse(user.id)">Purchase</button>
+
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <!-- logout-button.component.html -->
+    <!-- <button (click)="logout()">Logout</button> -->
+
+</div>

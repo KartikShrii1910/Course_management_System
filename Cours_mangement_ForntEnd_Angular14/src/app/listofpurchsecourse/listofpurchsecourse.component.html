@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List </title>
+</head>
+
+<body>
+
+    <div class="table-container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Student Name</th>
+                    <th>Student Email</th>
+                    <th>Qualification</th>
+                    <th>Gender</th>
+                    <th>Course Name</th>
+                    <th>Course Duration</th>
+                    <th>Course Description</th>
+                    <th>Mobile Number</th>
+
+                    <!-- Add more table headers as needed -->
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of allpurchasecourse">
+                    <td>{{ user.student_name }}</td>
+                    <td>{{ user.student_email }}</td>
+                    <td>{{ user.student_qualification }}</td>
+                    <td>{{ user.student_gender }}</td>
+                    <td>{{ user.course_name }}</td>
+                    <td>{{ user.course_duration }}</td>
+                    <td>{{ user.course_description }}</td>
+                    <td>{{ user.student_number }}</td>
+
+
+                </tr>
+
+            </tbody>
+        </table>
+        
+
+    </div>
+</body>
+
+</html>
